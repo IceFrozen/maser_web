@@ -4,7 +4,7 @@
 		<el-col :span="24" class="toolbar" style="padding-bottom: 0px;">
 			<el-form :inline="true">
 				<el-form-item>
-					<el-input  placeholder="玩家id" v-model="findId"></el-input>
+					<el-input  placeholder="用户id" v-model="findId"></el-input>
 				</el-form-item>
 			<!-- 	<el-form-item label="活动区域">
 					<el-select placeholder="请选择活动区域">
@@ -42,17 +42,19 @@
 			</el-table-column>
 			<el-table-column prop="wxInfo.wxUnionid" label="unionid"sortable>
 			</el-table-column>
-		<!-- 	<el-table-column prop="__created" label="注册时间" sortable>
-			</el-table-column> -->
-			<el-table-column prop="coin" label="房卡" sortable>
+			<el-table-column prop="name" label="姓名" sortable>
+			</el-table-column>
+			<el-table-column prop="wxInfo.sex" label="性别"sortable>
+			</el-table-column>
+			<el-table-column prop="age" label="年龄" sortable>
+			</el-table-column>
+			<el-table-column prop="phoneNumbr" label="联系方式" sortable>
 			</el-table-column>
 			<el-table-column label="是否是推官员"sortable>
 				<template scope="scope"> 
 		 			{{scope.row.sellerInfo?'是':'否'}}
 		 		</template>
 			</el-table-column>
-		<!-- 	<el-table-column prop="account" label="额度" sortable>
-			</el-table-column> -->
 			<el-table-column label="操作">
 				<template scope="scope">
 					<!-- <el-button size="small" @click="selectRow(scope.$index, scope.row)">查看</el-button> -->
@@ -205,8 +207,8 @@
 				this.getUsers();
 			},
 			async selectRow(row) {
-				// this.$message('功能还在开发过程中')
-			 //  return
+				this.$message('功能还在开发过程中')
+			   	return
 				await this.setPlayerDetails(row.id)
 				this.$router.replace('/playerDetail')
 			},

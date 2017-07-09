@@ -2,9 +2,9 @@ import Login from './views/Login.vue'
 import NotFound from './views/404.vue'
 import Home from './views/Home.vue'
 import Main from './views/Main.vue'
-import PlayerList from './views/nav1/PlayerList.vue'
-import Form from './views/nav1/Form.vue'
-import playerDetail from './views/nav1/playerDetail.vue'
+import PlayerList from './views/playerManager/PlayerList.vue'
+import Form from './views/playerManager/Form.vue'
+import playerDetail from './views/playerManager/playerDetail.vue'
 import gameManager from './views/Manager/gameManager.vue'
 import roomManager from './views/Manager/roomManager.vue'
 import orderManager from './views/Manager/orderManager.vue'
@@ -35,12 +35,12 @@ let routes = [
     {
         path: '/',
         component: Home,
-        name: '玩家管理',
+        name: '用户管理',
         iconCls: 'el-icon-message',//图标样式class
         hidden: false, 
         children: [
            // { path: '/main', component: Main, name: '主页', hidden: true },
-            { path: '/table', component: PlayerList, name: '玩家列表' },
+            { path: '/table', component: PlayerList, name: '用户列表' },
             // { path: '/form', component: Form, name: 'Form',hidden: true },
             { path: '/playerDetail', component: playerDetail, name: '房卡消费', hidden: true},
         ]
@@ -84,6 +84,7 @@ let routes = [
         component: Home,
         name: '订单管理',
         iconCls: 'fa fa-id-card-o',
+        hidden: true,   //TODO 关闭功能
         children: [
             { path: '/applyManager', component: applyManager, name: '提现审核' },
             { path: '/orderManager', component: orderManager, name: '订单查询' }

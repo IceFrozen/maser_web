@@ -72,8 +72,9 @@ export default {
       store.commit(REQUEST_PLAYER_DETAILS)
       try {
         let res = await Vue.api.get('/users/'+id,{
-          params: {filter:{include:[{"wxInfo":{"seller":{"uplevel":"wxInfo"}}}]}}
+          params: {filter:{include:"wxInfo"}}
         })
+        console.log("this is player detail info", res)
         store.commit(GET_PLAYER_DETAILS_SUCCESS,res.data)
       } catch (e) {
         store.commit(GET_PLAYER_DETAILS_FAILD)
