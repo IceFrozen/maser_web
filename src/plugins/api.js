@@ -2,8 +2,9 @@ import axios from 'axios'
 import store from '../vuex'
 import Vue from 'vue'
 //let instance = axios
- let instance = axios.create({
-  baseURL: 'http://127.0.0.1:3001/api',
+var appConfig = require('../appConfig.js')
+let instance = axios.create({
+  baseURL: appConfig.baseURL,
   //baseURL: 'http://wx.mahjong.haowan98.com/api',
   timeout: 10000
  })
