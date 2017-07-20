@@ -50,7 +50,7 @@
         logining: false,
         ruleForm: {
           account: 'testAdmin',
-          checkPass: 'testAdmin'
+          checkPass: ''
         },
         rules: {
           account: [

@@ -1,5 +1,5 @@
 module.exports = {
-  baseURL:"http://lizhipeng.space/api"
+  baseURL:"http://60.205.212.200/api"
 }
 
 /*	
